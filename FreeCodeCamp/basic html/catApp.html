@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>CatPhotoApp</title>
+  </head>
+  <body>
+    <main>
+      <!-- The h1 through h6 heading elements are used to signify the importance of content below them. 
+        The lower the number, the higher the importance-->
+      <h1>CatPhotoApp</h1>
+      <section>
+        <h2>Cat Photos</h2>
+        <!--target attribute with the value _blank opens the link in new tab-->
+        <p>See more <a target="_blank" href="https://freecatphotoapp.com">cat photos</a> in our gallery.</p>
+      <!--The alt attribute's text is used for screen readers to improve accessibility 
+        and is displayed if the image fails to load-->
+        <a href="https://freecatphotoapp.com"><img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
+      </section>
+      <section>
+        <h2>Cat Lists</h2>
+        <h3>Things cats love:</h3>
+        <ul>
+          <li>cat nip</li>
+          <li>laser pointers</li>
+          <li>lasagna</li>
+        </ul>
+      <!--The figure element represents self-contained content and will allow you to associate an image with a caption.-->
+        <figure>
+          <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/lasagna.jpg" alt="A slice of lasagna on a plate.">
+      <!--A figcaption element is used to add a caption to describe the image contained within the figure element.-->    
+          <figcaption>Cats <em>love</em> lasagna.</figcaption>  
+        </figure>
+        <h3>Top 3 things cats hate:</h3>
+        <ol>
+          <li>flea treatment</li>
+          <li>thunder</li>
+          <li>other cats</li>
+        </ol>
+        <figure>
+          <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/cats.jpg" alt="Five cats looking around a field.">
+      <!--The strong element is used to indicate that some text is of strong importance or urgent.-->    
+          <figcaption>Cats <strong>hate</strong> other cats.</figcaption>  
+        </figure>
+      </section>
+      <section>
+        <h2>Cat Form</h2>
+      <!--The action attribute indicates where form data should be sent.-->  
+        <form action="https://freecatphotoapp.com/submit-cat-photo">
+      <!--The fieldset element is used to group related inputs and labels together in a web form-->    
+          <fieldset>
+      <!--The legend element acts as a caption for the content in the fieldset element-->      
+            <legend>Is your cat an indoor or outdoor cat?</legend>
+      <!--label elements are used to help associate the text for an input element with the input element itself.
+         Makes it so clicking the word Indoor also selects the corresponding radio button.-->
+      <!--If two or more radio buttons have the same name value then selecting on of them automatically deselects the other-->         
+            <label><input id="indoor" type="radio" name="indoor-outdoor" value="indoor" checked> Indoor</label>
+            <label><input id="outdoor" type="radio" name="indoor-outdoor" value="outdoor"> Outdoor</label>
+          </fieldset>
+          <fieldset>
+            <legend>What's your cat's personality?</legend>
+      <!--The id attribute is used to identify specific HTML elements.-->  
+      <!--The form data for the button is based on its name and value attributes.-->    
+            <input id="loving" type="checkbox" name="personality" value="loving" checked> <label for="loving">Loving</label>
+            <input id="lazy" type="checkbox" name="personality" value="lazy"> <label for="lazy">Lazy</label>
+            <input id="energetic" type="checkbox" name="personality" value="energetic"> <label for="energetic">Energetic</label>
+          </fieldset>
+          <input type="text" name="catphotourl" placeholder="cat photo URL" required>
+          <button type="submit">Submit</button>
+        </form>
+      </section>
+    </main>
+    <footer>
+      <p>
+        No Copyright - <a href="https://www.freecodecamp.org">freeCodeCamp.org</a>
+      </p>
+    </footer>
+  </body>
+</html>
