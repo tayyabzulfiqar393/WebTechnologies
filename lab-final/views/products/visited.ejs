@@ -1,0 +1,19 @@
+<!-- views/products/visited.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Visited Products</title>
+</head>
+<body>
+    <h1>Visited Products</h1>
+    <ul>
+        <% visitedProducts.forEach(product => { %>
+            <li>
+                <a href="/products/<%= product._id %>"><%= product.name %></a>
+                - <%= product.description %> - $<%= product.price %>
+            </li>
+        <% }) %>
+    </ul>
+</body>
+</html>

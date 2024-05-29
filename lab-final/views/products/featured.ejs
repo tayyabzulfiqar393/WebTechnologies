@@ -1,0 +1,8 @@
+<%- include('partials/header') %>
+<h1>Featured Products</h1>
+<ul>
+    <% products.forEach(product => { %>
+        <li><a href="/products/<%= product._id %>"><%= product.name %></a></li>
+    <% }) %>
+</ul>
+<%- include('partials/footer') %>

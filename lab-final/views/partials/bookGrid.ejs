@@ -1,0 +1,25 @@
+<% 
+  // Set the book cover class based on whether it's large or not
+  bookCoverClass = locals.large ? 'book-cover-large' : '';
+
+  // Set the book grid class based on whether it's large or not
+  bookGridClass = locals.large ? 'book-grid-large' : '';
+%>
+
+<!-- Book Grid Container with Optional Large Class -->
+<div class="book-grid <%= bookGridClass %>">
+
+    <!-- Loop Through Books -->
+    <% books.forEach(book => { %>
+
+      <!-- Link to Book Details -->
+      <a href="/books/<%= book.id %>">
+        
+        <!-- Book Cover Image with Optional Large Class -->
+        <img class="book-cover <%= bookCoverClass %>" src="<%= book.coverImagePath %>">
+        
+      </a>
+
+  <% }) %>
+
+</div>

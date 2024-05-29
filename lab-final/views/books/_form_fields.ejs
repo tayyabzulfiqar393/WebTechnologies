@@ -1,0 +1,51 @@
+<!-- Book Form -->
+
+<div class="form-row">
+  <!-- Title Input -->
+  <div class="form-item">
+      <label>Title</label>
+      <input type="text" name="title" value="<%= book.title %>">
+  </div>
+  <!-- Author Dropdown -->
+  <div class="form-item">
+      <label>Author</label>
+      <select name="author">
+          <!-- Loop through authors -->
+          <% authors.forEach(author => { %>
+          <!-- Check if author matches book's author -->
+          <% if (author.id === book.author) { %>
+          <option selected label="<%= author.name %>" value="<%= author.id %>">
+          <% } else { %>
+          <option label="<%= author.name %>" value="<%= author.id %>">
+          <% } %>
+          <% }) %>
+      </select>
+  </div>
+</div>
+
+<div class="form-row">
+  <!-- Publish Date Input -->
+  <div class="form-item">
+      <label>Publish Date</label>
+      <input type="date" name="publishDate"
+          value="<%= book.publishDate == null ? '' : book.publishDate.toISOString().split('T')[0] %>">
+  </div>
+  <!-- Page Count Input -->
+  <div class="form-item">
+      <label>Page Count</label>
+      <input type="number" name="pageCount" min="1" value="<%= book.pageCount %>">
+  </div>
+</div>
+
+<div class="form-row">
+  <!-- Cover File Input -->
+  <div class="form-item form-item-no-grow">
+      <label>Cover</label>
+      <input type="file" name="cover" class="book-cover filepond">
+  </div>
+  <!-- Description Textarea -->
+  <div class="form-item">
+      <label>Description</label>
+      <textarea name="description"><%= book.description %></textarea>
+  </div>
+</div>

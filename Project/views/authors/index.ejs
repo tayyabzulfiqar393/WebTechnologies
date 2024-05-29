@@ -1,0 +1,53 @@
+<h2 class="page-header">Search Authors</h2>
+
+<!-- Search Form -->
+<form action="/authors" method="GET">
+  <div class="form-row">
+    <div class="form-item">
+      <label>Name</label>
+      <input type="text" name="name" value="<%= searchOptions.name %>">
+    </div>
+  </div>
+
+  <!-- Search Button -->
+  <div class="form-row form-row-end">
+    <!-- Form submission goes to /authors route with GET method -->
+    <button class="btn btn-primary" type="submit">Search</button>
+  </div>
+</form>
+
+<br>
+
+<!-- Display Authors -->
+<% authors.forEach(author => { %>
+  <!-- Author Information -->
+  <div class="author-row">
+    <div class="author-name"><%= author.name %></div>
+    <div class="btn-row">
+      <!-- button to View Author Details -->
+      <a class="btn btn-primary" href="/authors/<%= author.id %>">View</a>
+      
+      <!-- button to Edit Author Details -->
+      <a class="btn btn-primary" href="/authors/<%= author.id %>/edit">Edit</a>
+      
+      <!-- Delete Author Form -->
+      <!-- Form submission goes to /authors/{author.id} route with DELETE method -->
+      <%- include('../partials/deleteForm', { url: `/authors/${author.id}` }) %>
+    </div>
+  </div>
+<% }) %>
+
+<!-- Pagination Links -->
+<div class="pagination">
+  <% if (pagination.page > 1) { %>
+    <a href="?page=<%= pagination.page - 1 %>&limit=<%= pagination.limit %>">Previous</a>
+  <% } %>
+
+  <span>Page <%= pagination.page %></span>
+
+  <% if (authors.length === pagination.limit) { %>
+    <a href="?page=<%= pagination.page + 1 %>&limit=<%= pagination.limit %>">Next</a>
+  <% } %>
+
+ 
+</div>

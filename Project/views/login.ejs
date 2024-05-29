@@ -1,0 +1,21 @@
+
+<%- include('./partials/errorMessage.ejs') %>
+
+
+<div class="inner-container">
+  <h2>Login</h2>
+  <!-- Your login form goes here -->
+  <form action="/auth/login" method="post">
+    <label for="email">Email:</label>
+    <input type="text" id="email" name="email" required>
+    
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+
+    <button type="submit">Login</button>
+  </form>
+
+  <!-- Link to the signup page -->
+  <p>Don't have an account? <a href="/auth/signup">Sign Up</a></p>
+</div>
+

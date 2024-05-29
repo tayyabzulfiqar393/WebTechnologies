@@ -1,0 +1,21 @@
+<h2 class="page-header"><%= author.name %></h2>
+
+<div class="btn-row">
+  <!-- Edit Author Button -->
+  <a class="btn btn-primary" href="/authors/<%= author.id %>/edit">Edit</a>
+
+  <!-- Include Delete Form  -->
+  <!-- Form submission goes to /authors/{author.id} route with DELETE method -->
+  <%- include('../partials/deleteForm', { url: `/authors/${author.id}` }) %>
+</div>
+
+<!-- Check if there are Books by the Author -->
+<% if (booksByAuthor.length > 0) { %>
+
+  <!-- Header for Books By Author -->
+  <h2 class="page-header">Books By Author</h2>
+
+  <!-- Include Book Grid Partial -->
+  <%- include('../partials/bookGrid', { books: booksByAuthor }) %>
+
+<% } %>
